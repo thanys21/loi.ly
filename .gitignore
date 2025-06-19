@@ -1,24 +1,35 @@
-# Logs
+# ✅ Log files
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# ✅ Dependency directory
+node_modules/
+
+# ✅ Build output
+dist/
+dist-ssr/
 *.local
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# ✅ Environment files
+.env
+.env.*.local
+
+# ✅ Editor config
+.vscode/
+.idea/
 .DS_Store
+
+# ✅ VS-related files (nếu không dùng .NET)
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# ✅ Optional: lock file từ công cụ khác
+package-lock.json
+pnpm-lock.yaml

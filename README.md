@@ -1,55 +1,95 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 💼 Loi.ly — Portfolio Project
 
-Currently, two official plugins are available:
+This is a personal **React + TypeScript + Vite** portfolio site. Built with modern tools and a clean component-based structure. Fully responsive, dark mode ready, and easy to customize.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ⚙️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ React + TypeScript
+- ⚡ Vite (Fast Dev + HMR)
+- 🎨 TailwindCSS
+- 🧼 ESLint + Prettier
+- 🌙 Dark Mode Support
+- 🎞 Framer Motion (Animation)
+- 📧 EmailJS / Formspree (Contact Form)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 🧱 Folder Structure
+
+```
+src/
+├── assets/             # Images, icons, svgs
+├── components/         # Reusable UI components
+│   └── common/         # (e.g. Button, Card)
+├── hooks/              # Custom React hooks
+├── sections/           # Page sections: Hero, About, Skills...
+├── App.tsx             # App root
+├── main.tsx            # Entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### 1. Clone the project
+
+```bash
+git clone https://github.com/thanys21/loi.ly.git
+cd loi.ly
 ```
-# loi.ly
+
+### 2. Install dependencies
+
+```bash
+yarn          # or: npm install
+```
+
+### 3. Start development server
+
+```bash
+yarn dev      # or: npm run dev
+```
+
+Vite will serve at: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🧪 Linting & Formatting
+
+Run ESLint and Prettier:
+
+```bash
+yarn lint     # or: npm run lint
+```
+
+> ESLint rules are extended for TypeScript and React. Prettier auto-formats code on save in VS Code.
+
+---
+
+## 🌐 Deployment
+
+Easily deployable on:
+
+- [Vercel](https://vercel.com/)
+- [Netlify](https://netlify.com/)
+
+```bash
+yarn build     # or: npm run build
+```
+
+Then drag the `dist/` folder to your hosting platform.
+
+---
+
+## 📬 Contact
+
+You can connect via the form in the **Contact Section** or directly through the email address in the footer.
+
+---
+
+## 📄 License
+
+This project is open source and free to use.

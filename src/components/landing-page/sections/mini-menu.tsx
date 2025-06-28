@@ -1,5 +1,5 @@
-import { cx } from "class-variance-authority";
 import { useEffect, useState, useMemo } from "react";
+import { animate } from "framer-motion";
 
 interface MenuItem {
   id: string;
@@ -9,6 +9,7 @@ interface MenuItem {
 
 const MiniMenu = () => {
   const [activeSection, setActiveSection] = useState("hero");
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const menuItems: MenuItem[] = useMemo(
     () => [
@@ -16,13 +17,15 @@ const MiniMenu = () => {
       { id: "skills", icon: "💻", label: "Skills" },
       { id: "experience", icon: "📚", label: "Experience" },
       { id: "projects", icon: "🚀", label: "Projects" },
-    //   { id: "contact", icon: "📧", label: "Contact" },
+      { id: "contact", icon: "📧", label: "Contact" },
     ],
     []
   );
 
   useEffect(() => {
     const handleScroll = () => {
+      if (isScrolling) return;
+
       const sections = menuItems.map((item) =>
         document.getElementById(item.id)
       );
@@ -42,13 +45,39 @@ const MiniMenu = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [menuItems]);
+  }, [menuItems, isScrolling]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (!element) return;
+
+    setIsScrolling(true);
+    const offset = 80;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    setActiveSection(sectionId); // Set active ngay lập tức
+    animate(window.scrollY, offsetPosition, {
+      duration: 0.5, // Giảm thời gian animation
+      ease: [0.1, 0.1, 0.1, 0.1], // Linear animation không có easing
+      onUpdate: (value) => {
+        window.scrollTo(0, value);
+      },
+      onComplete: () => {
+        setIsScrolling(false);
+      },
+    });
+  };
+
+  const getActiveStyles = (itemId: string) => {
+    const isActive = activeSection === itemId;
+    const baseStyles =
+      "w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ease-in-out transform group relative ";
+    const activeStyles = isActive
+      ? "bg-purple-500 text-white shadow-lg scale-110"
+      : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:scale-110 active:scale-95";
+
+    return `${baseStyles} ${activeStyles} hover:bg-purple-100 dark:hover:bg-purple-900/50`;
   };
 
   return (
@@ -58,26 +87,20 @@ const MiniMenu = () => {
           <button
             key={item.id}
             onClick={() => scrollToSection(item.id)}
-            className={cx(
-              "w-10 h-10 rounded-full",
-              "flex items-center justify-center",
-              "relative group transition-all duration-300 hover:bg-purple-100 dark:hover:bg-purple-900/50",
-              `${
-                activeSection === item.id
-                  ? "bg-purple-500 text-white"
-                  : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300"
-              }`
-            )}
+            className={getActiveStyles(item.id)}
           >
-            <span>{item.icon}</span>
             <span
-              className={cx(
-                "absolute right-full mr-2 py-1 px-2",
-                "bg-gray-900 dark:bg-gray-700",
-                "text-white text-sm",
-                "rounded opacity-0 invisible",
-                "group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap"
-              )}
+              className={`transition-transform duration-300 ${
+                activeSection === item.id ? "animate-bounce" : ""
+              }`}
+            >
+              {item.icon}
+            </span>
+            <span
+              className="absolute right-full mr-2 py-1 px-2 bg-gray-900 dark:bg-gray-700 text-white text-sm rounded-lg
+              opacity-0 invisible -translate-x-2
+              group-hover:opacity-100 group-hover:visible group-hover:translate-x-0
+              transition-all duration-300 whitespace-nowrap"
             >
               {item.label}
             </span>

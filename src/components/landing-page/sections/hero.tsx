@@ -21,7 +21,7 @@ const Hero = () => {
               performant user interfaces.
             </p>
             <div className="flex gap-4 justify-center md:justify-start">
-              <Button variant="default" size="lg">
+              <Button variant="outline" size="lg">
                 View Projects
               </Button>
               <Button variant="outline" size="lg">

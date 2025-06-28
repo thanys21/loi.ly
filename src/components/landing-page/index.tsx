@@ -5,31 +5,38 @@ import Hero from "./sections/hero";
 import MiniMenu from "./sections/mini-menu";
 import Projects from "./sections/projects";
 import Skills from "./sections/skills";
+import { ThemeProvider } from "../common/theme/theme-provider";
+import ThemeToggle from "../ui/theme-toggle";
 
 const LandingPage = () => {
   return (
-    <div className="relative min-h-screen">
-      {/* Hero Section */}
-      <Hero />
+    <ThemeProvider>
+      <div className="relative min-h-screen">
+        {/* Hero Section */}
+        <Hero />
 
-      {/* Skills Section */}
-      <Skills />
+        {/* Skills Section */}
+        <Skills />
 
-      {/* Experience Section */}
-      <Experience />
+        {/* Experience Section */}
+        <Experience />
 
-      {/* Projects Section */}
-      <Projects />
+        {/* Projects Section */}
+        <Projects />
 
-      {/* Contact Section */}
-      <Contact />
+        {/* Contact Section */}
+        <Contact />
 
-      {/* Footer Section */}
-      <Footer />
+        {/* Footer Section */}
+        <Footer />
 
-      {/* Mini menu section */}
-      <MiniMenu />
-    </div>
+        {/* Mini menu section */}
+        <MiniMenu />
+
+        {/* Theme toggle */}
+        <ThemeToggle />
+      </div>
+    </ThemeProvider>
   );
 };
 

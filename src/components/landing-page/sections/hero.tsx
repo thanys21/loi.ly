@@ -2,7 +2,10 @@ import { Button } from "../../ui/button";
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
+    <section
+      id="hero"
+      className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-950 dark:to-gray-900"
+    >
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 text-center md:text-left">
@@ -10,11 +13,12 @@ const Hero = () => {
               Ly Thien Loi
             </h1>
             <h2 className="text-xl md:text-2xl text-gray-300 mb-8">
-              Frontend Developer
+              Web Engineer
             </h2>
             <p className="text-gray-400 mb-8 max-w-lg">
-              Passionate frontend developer with expertise in React, TypeScript, and modern web technologies.
-              Focused on creating beautiful and performant user interfaces.
+              Passionate frontend developer with expertise in React, TypeScript,
+              and modern web technologies. Focused on creating beautiful and
+              performant user interfaces.
             </p>
             <div className="flex gap-4 justify-center md:justify-start">
               <Button variant="default" size="lg">

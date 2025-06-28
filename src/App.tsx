@@ -1,10 +1,10 @@
-import { Button } from "./components/ui/button";
+import LandingPage from "./components/landing-page";
 
 const App = () => {
   return (
-    <>
-      <Button></Button>
-    </>
+    <div>
+      <LandingPage />
+    </div>
   );
 };
 

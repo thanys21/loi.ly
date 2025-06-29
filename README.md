@@ -1,95 +1,109 @@
+# 💼 Loi.ly — Modern Portfolio
 
-# 💼 Loi.ly — Portfolio Project
+A modern, responsive portfolio website built with React and TypeScript. Features smooth animations, dark mode support, and a clean, professional design.
 
-This is a personal **React + TypeScript + Vite** portfolio site. Built with modern tools and a clean component-based structure. Fully responsive, dark mode ready, and easy to customize.
+## ✨ Features
 
----
+- 🎯 Clean, Modern UI Design
+- 📱 Fully Responsive Layout
+- 🌓 Dark/Light Theme Support
+- 🎞 Smooth Page Transitions & Animations
+- 🔄 Interactive Section Navigation
+- ⚡ Optimized Performance
+- 🎨 Customizable Styles with TailwindCSS
+- 📊 SEO Friendly
 
-## ⚙️ Tech Stack
+## 🛠 Tech Stack
 
-- ⚛️ React + TypeScript
-- ⚡ Vite (Fast Dev + HMR)
-- 🎨 TailwindCSS
-- 🧼 ESLint + Prettier
-- 🌙 Dark Mode Support
-- 🎞 Framer Motion (Animation)
-- 📧 EmailJS / Formspree (Contact Form)
+- ⚛️ React 18 + TypeScript
+- ⚡ Vite for blazing-fast development
+- 💨 TailwindCSS for styling
+- 🎭 Framer Motion for animations
+- 📦 Shadcn UI Components
+- 🔍 SEO optimized
+- 🧼 ESLint + Prettier for code quality
+- 📱 Responsive design principles
 
----
-
-## 🧱 Folder Structure
+## 🏗 Project Structure
 
 ```
 src/
-├── assets/             # Images, icons, svgs
-├── components/         # Reusable UI components
-│   └── common/         # (e.g. Button, Card)
-├── hooks/              # Custom React hooks
-├── sections/           # Page sections: Hero, About, Skills...
-├── App.tsx             # App root
-├── main.tsx            # Entry point
+├── components/
+│   ├── landing-page/          # Main page sections
+│   │   ├── sections/
+│   │   │   ├── hero.tsx
+│   │   │   ├── skills.tsx
+│   │   │   ├── experience.tsx
+│   │   │   ├── projects.tsx
+│   │   │   ├── contact.tsx
+│   │   │   └── mini-menu.tsx
+│   │   └── index.tsx
+│   └── ui/                    # Reusable UI components
+│       ├── button.tsx
+│       └── theme-toggle.tsx
+├── lib/                       # Utilities and helpers
+├── styles/                    # Global styles
+└── main.tsx                   # Entry point
 ```
-
----
 
 ## 🚀 Getting Started
 
-### 1. Clone the project
-
+1. **Clone the repository**
 ```bash
 git clone https://github.com/thanys21/loi.ly.git
 cd loi.ly
 ```
 
-### 2. Install dependencies
-
+2. **Install dependencies**
 ```bash
-yarn          # or: npm install
+npm install
+# or
+yarn install
 ```
 
-### 3. Start development server
-
+3. **Start development server**
 ```bash
-yarn dev      # or: npm run dev
+npm run dev
+# or
+yarn dev
 ```
 
-Vite will serve at: [http://localhost:5173](http://localhost:5173)
+The site will be available at `http://localhost:5173`
 
----
+## 🎨 Customization
 
-## 🧪 Linting & Formatting
+### Theme Customization
+- Edit `tailwind.config.js` to modify the theme, colors, and other design tokens
+- Dark mode colors can be adjusted in the same config file
 
-Run ESLint and Prettier:
-
-```bash
-yarn lint     # or: npm run lint
-```
-
-> ESLint rules are extended for TypeScript and React. Prettier auto-formats code on save in VS Code.
-
----
+### Content Customization
+- Update personal information in the respective section components
+- Modify section content in `src/components/landing-page/sections`
+- Add or remove sections by editing `src/components/landing-page/index.tsx`
 
 ## 🌐 Deployment
 
-Easily deployable on:
+This project can be easily deployed to various platforms:
 
-- [Vercel](https://vercel.com/)
-- [Netlify](https://netlify.com/)
+1. **Vercel** (Recommended)
+   - Connect your GitHub repository
+   - Vercel will automatically detect Vite and configure the build settings
 
+2. **Manual Deployment**
 ```bash
-yarn build     # or: npm run build
+npm run build
+# or
+yarn build
 ```
+The build output will be in the `dist` directory
 
-Then drag the `dist/` folder to your hosting platform.
+## 📫 Contact
 
----
+Feel free to reach out:
+- Email: loithienly@gmail.com
+- GitHub: [@Loily](https://github.com/thanys21)
+- LinkedIn: [Loi Ly](www.linkedin.com/in/lợi-lý-thiên-26bbb3211)
 
-## 📬 Contact
+## 📜 License
 
-You can connect via the form in the **Contact Section** or directly through the email address in the footer.
-
----
-
-## 📄 License
-
-This project is open source and free to use.
+This project is open source and available under the MIT License.

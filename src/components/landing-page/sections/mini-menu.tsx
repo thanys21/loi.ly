@@ -56,10 +56,10 @@ const MiniMenu = () => {
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-    setActiveSection(sectionId); // Set active ngay lập tức
+    setActiveSection(sectionId);
     animate(window.scrollY, offsetPosition, {
-      duration: 0.5, // Giảm thời gian animation
-      ease: [0.1, 0.1, 0.1, 0.1], // Linear animation không có easing
+      duration: 0.5,
+      ease: [0.1, 0.1, 0.1, 0.1], // Linear animation not waiting
       onUpdate: (value) => {
         window.scrollTo(0, value);
       },

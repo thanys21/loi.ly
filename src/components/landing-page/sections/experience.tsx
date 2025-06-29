@@ -1,11 +1,12 @@
 const Experience = () => {
   const experiences = [
     {
-      company: "CIT Solutions",
-      position: "Frontend Developer",
+      company: "Be Group",
+      position: "Web Engineer",
       period: "2023 - Present",
       responsibilities: [
-        "Developed and maintained responsive web applications using React and TypeScript",
+        "Developed and maintained responsive web applications using React",
+        "Adopted micro front-end architecture to modularize large applications and streamline team workflows",
         "Implemented UI components following modern design principles",
         "Collaborated with backend teams for API integration",
         "Participated in code reviews and technical discussions"

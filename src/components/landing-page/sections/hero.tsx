@@ -16,15 +16,24 @@ const Hero = () => {
               Web Engineer
             </h2>
             <p className="text-gray-400 mb-8 max-w-lg">
-              Passionate frontend developer with expertise in React, TypeScript,
-              and modern web technologies. Focused on creating beautiful and
-              performant user interfaces.
+              Web Engineer with strong expertise in modern frontend technologies.
+              Specialized in building scalable applications using React, TypeScript,
+              and Next.js. Passionate about creating performant user experiences
+              and maintaining clean, maintainable codebases.
             </p>
             <div className="flex gap-4 justify-center md:justify-start">
-              <Button variant="outline" size="lg">
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 View Projects
               </Button>
-              <Button variant="outline" size="lg">
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Contact Me
               </Button>
             </div>

@@ -1,23 +1,23 @@
 const Projects = () => {
   const projects = [
     {
+      title: "Micro Frontend",
+      description: "Adopted micro front-end architecture to modularize large applications and streamline team workflows.",
+      technologies: ["React", "TypeScript", "TailwindCSS", "Redux"],
+      role: "Frontend Developer"
+    },
+    {
       title: "Logistics Project",
       description: "Developed a responsive web application using React and Next.js for efficient transportation management.",
-      technologies: ["React", "Next.js", "Redux", "Material-UI"],
+      technologies: ["React", "Next.js", "Redux", "TailwindCSS"],
       role: "Frontend Developer"
     },
     {
       title: "E-commerce Platform",
       description: "Built a modern e-commerce platform with real-time updates and dynamic product filtering.",
-      technologies: ["React", "Node.js", "Express", "MongoDB"],
+      technologies: ["React", "Node.js"],
       role: "Full Stack Developer"
     },
-    {
-      title: "Admin Dashboard",
-      description: "Created an intuitive admin dashboard with comprehensive data visualization and management features.",
-      technologies: ["React", "TypeScript", "TailwindCSS", "Chart.js"],
-      role: "Frontend Developer"
-    }
   ];
 
   return (
